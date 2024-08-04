@@ -1,0 +1,52 @@
+# Define the Person class
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
+
+# Define the Student class that inherits from Person
+class Student(Person):
+    def __init__(self, name, age, student_id, grade):
+        super().__init__(name, age)
+        self.student_id = student_id
+        self.grade = grade
+
+    def get_student_id(self):
+        return self.student_id
+
+    def get_grade(self):
+        return self.grade
+
+# Function to perform login
+def login(username, password):
+    # Check if the username and password match the student's credentials
+    # You can implement your own logic here
+    if username == "student" and password == "password":
+        return True
+    else:
+        return False
+
+# Example usage
+student = Student("Marius Munawirawan", 48, "123456", "A")
+
+# Get student's name and age
+print(student.get_name())  # Output: Marius Munawirawan
+print(student.get_age())  # Output: 48
+
+# Get student's ID and grade
+print(student.get_student_id())  # Output: 123456
+print(student.get_grade())  # Output: A
+
+# Perform login
+username = input("Enter username: ")
+password = input("Enter password: ")
+if login(username, password):
+    print("Login successful")
+else:
+    print("Login failed")
